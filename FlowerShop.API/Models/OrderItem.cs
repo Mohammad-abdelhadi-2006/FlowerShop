@@ -1,0 +1,16 @@
+namespace FlowerShop.API.Models;
+
+public class OrderItem
+{
+    public int Id { get; set; }
+    public int Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+
+    // Foreign key + navigation to the parent order
+    public int OrderId { get; set; }
+    public Order Order { get; set; } = null!;
+
+    // Foreign key + navigation to the product
+    public int ProductId { get; set; }
+    public Product Product { get; set; } = null!;
+}
